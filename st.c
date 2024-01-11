@@ -1,20 +1,9 @@
-/*
- * TODO: what do the null bytes in printf do? Somehow, the SRSCAN format is messed up,
- * but if I replace the null bytes with "X", it's somehow better?!?!?
- * TODO: fix invalid inputs leading to endless loop
- * TODO: at the end, run dos2unix
- */
-
-/* HINT: Somehow, the file command recognizes this source file as binary data.
- *       However, you can still grep it by using the -a parameter for forcing text mode.
- */
-
 /* Based on the 2008 C# port by Michael Birken: https://meatfighter.com/startrek1971/ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h> /* don't forget -lm */
 
-/*srand(0);*/
+/* srand(0); */
 
 double A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
 double _A[9][9];
