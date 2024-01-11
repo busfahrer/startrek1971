@@ -1,3 +1,4 @@
+dist/
 emscripten-pty.js
 *.wasm
 *.mjs

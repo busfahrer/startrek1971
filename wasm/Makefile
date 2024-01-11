@@ -1,14 +1,19 @@
-# Try the following line in your shell in order to activate the emscripten environment:
+# Try the following line in your shell in case your environment doesn't have emcc loaded:
 # source /etc/profile.d/emscripten.sh
+
+dist: build
+	mkdir -p dist
+	cp index.html emscripten-pty.js st.mjs st.wasm dist
+	rm -f emscripten-pty.js st.mjs st.wasm
 
 build: init ../st.c
 	emcc -s ASYNCIFY --js-library=emscripten-pty.js -o st.mjs ../st.c
 
-init: emscripten-pty.js
-	curl -O https://github.com/mame/xterm-pty/raw/main/emscripten-pty.js
+init:
+	curl -LO https://github.com/mame/xterm-pty/raw/main/emscripten-pty.js
 
 serve: build
-	python3 -m http.server 1971
+	python3 -m http.server 1971 -d ./dist
 
 clean:
 	rm -f st.mjs st.wasm
