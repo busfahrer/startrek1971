@@ -5,6 +5,6 @@ clean:
 	rm -f st
 
 pedantic:
-	gcc -o st st.c -lm -Wall -pedantic -std=c89
+	gcc -o st st.c -lm -Wall -pedantic -std=c99
 
 verify: clean pedantic
