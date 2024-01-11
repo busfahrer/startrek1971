@@ -8,13 +8,13 @@
 #define ARRAYLEN(arr) (sizeof(arr) / sizeof(arr[0]))
 
 #define MULTIFILL(matrix, value, rows, cols) { \
-    size_t i, j; \
-    for (i = 0; i < rows; i++) { \
-        for (j = 0; j < cols; j++) { \
-            matrix[i][j] = value; \
-        } \
-    } \
-} \
+    size_t i, j;                               \
+    for (i = 0; i < rows; i++) {               \
+        for (j = 0; j < cols; j++) {           \
+            matrix[i][j] = value;              \
+        }                                      \
+    }                                          \
+}
 
 
 double A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
@@ -71,7 +71,7 @@ void Fill(double *array, double value, size_t length) {
 }
 
 void FlushInputBuffer() {
-    // from https://stackoverflow.com/questions/7898215/how-can-i-clear-an-input-buffer-in-c
+    /* from https://stackoverflow.com/questions/7898215/how-can-i-clear-an-input-buffer-in-c */
     int c;
     while ((c = getchar()) != '\n' && c != EOF) { }
 }
@@ -600,7 +600,7 @@ _1270: printf("COMMAND ");
        if (A == 5) goto _3460;
        if (A == 6) goto _3560;
        if (A == 7) goto _4630;
-       if (A == 9) exit(0);
+       if (A == 9) exit(0); /* my addition */
        printf("\n");
        printf("   0 = SET COURSE\n");
        printf("   1 = SHORT RANGE SENSOR SCAN\n");
