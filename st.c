@@ -198,9 +198,9 @@ _4472: _9200();
        _9000();
        printf("\n");
        _9200();
-       printf(" ENERGY    %.0lf\n", (int)E);
+       printf(" ENERGY    %d\n", (int)E);
        _9200();
-       printf(" SHIELDS   %.0lf\n", (int)S);
+       printf(" SHIELDS   %d\n", (int)S);
        _9200();
        printf(" PHOTON TORPEDOES %.0lf\n", P);
        printf("-=--=--=--=--=--=--=--=-\n");
@@ -728,7 +728,7 @@ _2370: printf("LONG RANGE SENSOR SCAN FOR QUADRANT");
            if (_D[7] < 0) goto _2460;
            _Z[(int)I][(int)J] = _G[(int)I][(int)J];
 _2460:   ;}
-         printf("| %03.0lf | %03.0lf | %03.0lf |\n", (int)_N[1], (int)_N[2], (int)_N[3]);
+         printf("| %03d | %03d | %03d |\n", (int)_N[1], (int)_N[2], (int)_N[3]);
          printf("-------------------\n");
        ;}
        goto _1270;
@@ -890,7 +890,7 @@ _4740: printf("COMPUTER RECORD OF GALAXY FOR QUADRANT");
        printf("\n");
        printf("-------------------------------------------------\n");
        for(I = 1; I <= 8; I += 1) {
-         printf("| %03.0lf | %03.0lf | %03.0lf | %03.0lf | %03.0lf | %03.0lf | %03.0lf | %03.0lf |\n",
+         printf("| %03d | %03d | %03d | %03d | %03d | %03d | %03d | %03d |\n",
                  (int)_Z[1][(int)I], (int)_Z[2][(int)I], (int)_Z[3][(int)I], (int)_Z[4][(int)I],
                  (int)_Z[5][(int)I], (int)_Z[6][(int)I], (int)_Z[7][(int)I], (int)_Z[8][(int)I]);
        printf("-------------------------------------------------\n");
