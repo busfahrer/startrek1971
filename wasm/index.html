@@ -19,6 +19,8 @@
       // Connect the master object to xterm.js
       xterm.loadAddon(master);
 
+      xterm.focus();
+
       await initEmscripten({
         pty: slave
       });
