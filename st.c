@@ -5,6 +5,18 @@
 
 /* srand(0); */
 
+#define ARRAYLEN(arr) (sizeof(arr) / sizeof(arr[0]))
+
+#define MULTIFILL(matrix, value, rows, cols) { \
+    size_t i, j; \
+    for (i = 0; i < rows; i++) { \
+        for (j = 0; j < cols; j++) { \
+            matrix[i][j] = value; \
+        } \
+    } \
+} \
+
+
 double A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
 double _A[9][9];
 double _B[3];
@@ -31,7 +43,7 @@ void _9200();
 void _9400();
 void _9700();
 
-double getRand() {
+double GetRand() {
     return (double)(rand())/(double)(RAND_MAX);
 }
 
@@ -58,18 +70,8 @@ void Fill(double *array, double value, size_t length) {
     }
 }
 
-#define ARRAYLEN(arr) (sizeof(arr) / sizeof(arr[0]))
-
-#define MULTIFILL(matrix, value, rows, cols) { \
-    size_t i, j; \
-    for (i = 0; i < rows; i++) { \
-        for (j = 0; j < cols; j++) { \
-            matrix[i][j] = value; \
-        } \
-    } \
-} \
-
 void FlushInputBuffer() {
+    // from https://stackoverflow.com/questions/7898215/how-can-i-clear-an-input-buffer-in-c
     int c;
     while ((c = getchar()) != '\n' && c != EOF) { }
 }
@@ -107,7 +109,7 @@ int _3790() {
 _3820: if (_P[1] <= 0) goto _3910;
        for(I = 1; I <= 3; I += 1) {
          if (_K[(int)I][3] <= 0) goto _3900;
-         H = (_K[(int)I][3] / FND(0)) * (2 * getRand());
+         H = (_K[(int)I][3] / FND(0)) * (2 * GetRand());
          S = S - H;
          Z = H;
          _9400();
@@ -198,8 +200,8 @@ _4530: return;
 
 void _5380() {
        /* find-empty-location sub, strings removed */
-_5380: F = (int)(getRand() * 8 + 1);
-       G = (int)(getRand() * 8 + 1);
+_5380: F = (int)(GetRand() * 8 + 1);
+       G = (int)(GetRand() * 8 + 1);
        if (_A[(int)F][(int)G] != 0) goto _5380;
        return;
 }
@@ -452,11 +454,11 @@ _210: printf("\n");
       A = (int)(Abs(A));
       printf("INITIALIZING...\n");
       for(I = 0; I <= A; I += 1) {
-        J = getRand();
+        J = GetRand();
       ;}
 _230: /* *****  PROGRAM STARTS HERE ***** */
       printf("\n");
-      T = (int)(getRand() * 20 + 20) * 100;
+      T = (int)(GetRand() * 20 + 20) * 100;
       _T[1] = T;
       _T[2] = 30;
       D = 0;
@@ -467,10 +469,10 @@ _230: /* *****  PROGRAM STARTS HERE ***** */
       _S[4] = 200;
       Q = 0;
       S = 0;
-      _Q[1] = (int)(getRand() * 8) + 1;
-      _Q[2] = (int)(getRand() * 8) + 1;
-      _S[1] = (int)(getRand() * 8) + 1;
-      _S[2] = (int)(getRand() * 8) + 1;
+      _Q[1] = (int)(GetRand() * 8) + 1;
+      _Q[2] = (int)(GetRand() * 8) + 1;
+      _S[1] = (int)(GetRand() * 8) + 1;
+      _S[2] = (int)(GetRand() * 8) + 1;
       /* C array numbers in X,Y notation/display */
       /* dir 1 = X+1,Y    right */
       _C[1][1] = 1;
@@ -504,7 +506,7 @@ _490: _B[2] = 0;
       _P[3] = 0;
       for(I = 1; I <= 8; I += 1) {
         for(J = 1; J <= 8; J += 1) {
-          F = getRand();
+          F = GetRand();
           if (F > .98) goto _580;
           if (F > .95) goto _610;
           if (F > .8) goto _640;
@@ -518,13 +520,13 @@ _610:     _P[1] = 2;
           goto _660;
 _640:     _P[1] = 1;
           _P[3] = _P[3] + 1;
-_660:     F = getRand();
+_660:     F = GetRand();
           if (F > .96) goto _700;
           _B[1] = 0;
           goto _720;
 _700:     _B[1] = 1;
           _B[2] = _B[2] + 1;
-_720:     _S[3] = (int)(getRand() * 8 + 1);
+_720:     _S[3] = (int)(GetRand() * 8 + 1);
           _G[(int)I][(int)J] = _P[1] * 100 + _B[1] * 10 + _S[3];
           _Z[(int)I][(int)J] = 0;
         ;}
@@ -638,17 +640,17 @@ _1610: for(I = 1; I <= 8; I += 1) {
          if (_D[(int)I] >= 0) goto _1640;
          _D[(int)I] = _D[(int)I] + 1;
 _1640: ;}
-       if (getRand() > .2) goto _1810;
-       F = (int)(getRand() * 8 + 1);
-       if (getRand() >= .5) goto _1750;
-       _D[(int)F] = _D[(int)F] - (int)(getRand() * 5 + 1);
+       if (GetRand() > .2) goto _1810;
+       F = (int)(GetRand() * 8 + 1);
+       if (GetRand() >= .5) goto _1750;
+       _D[(int)F] = _D[(int)F] - (int)(GetRand() * 5 + 1);
        printf("\n");
        printf("DAMAGE CONTROL REPORT: ");
        _5610();
        printf(" DAMAGED\n");
        printf("\n");
        goto _1810;
-_1750: _D[(int)F] = _D[(int)F] + (int)(getRand() * 5 + 1);
+_1750: _D[(int)F] = _D[(int)F] + (int)(GetRand() * 5 + 1);
        printf("\n");
        printf("DAMAGE CONTROL REPORT: ");
        _5610();
@@ -735,10 +737,10 @@ _2590: printf("PHASERS LOCKED ON TARGET.  ENERGY AVAILABLE = %.0f\n", E);
        E = E - X;
        if (_3790()) goto _4000;
        if (_D[7] >= 0) goto _2680;
-       X = X * getRand();
+       X = X * GetRand();
 _2680: for(I = 1; I <= 3; I += 1) {
        if (_K[(int)I][3] <= 0) goto _2770;
-       H = (X / _P[1] / FND(0)) * (2 * getRand());
+       H = (X / _P[1] / FND(0)) * (2 * GetRand());
        _K[(int)I][3] = _K[(int)I][3] - H;
        Z = H;
        _9400();
