@@ -86,7 +86,7 @@ void FlushInputBuffer() {
 }
 
 void Input(double *a) {
-    int result = scanf("%f", a);
+    int result = scanf("%lf", a);
     FlushInputBuffer();
     if (result < 1) {
         *a = -1;
@@ -94,7 +94,7 @@ void Input(double *a) {
 }
 
 void InputMulti(double *a, double *b, double *c, double *d) {
-    scanf("%f,%f,%f,%f", a, b, c, d);
+    scanf("%lf,%lf,%lf,%lf", a, b, c, d);
     FlushInputBuffer();
 }
 
