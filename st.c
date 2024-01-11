@@ -86,7 +86,7 @@ void FlushInputBuffer() {
 }
 
 void Input(double *a) {
-    int result = scanf("%lf", a);
+    int result = scanf("%f", a);
     FlushInputBuffer();
     if (result < 1) {
         *a = -1;
@@ -94,7 +94,7 @@ void Input(double *a) {
 }
 
 void InputMulti(double *a, double *b, double *c, double *d) {
-    scanf("%lf,%lf,%lf,%lf", a, b, c, d);
+    scanf("%f,%f,%f,%f", a, b, c, d);
     FlushInputBuffer();
 }
 
@@ -172,7 +172,7 @@ _4430: printf("-=--=--=--=--=--=--=--=-\n");
        _9200();
        printf("\n");
        _9200();
-       printf(" STARDATE  %.0lf\n", T);
+       printf(" STARDATE  %.0f\n", T);
        _9200();
        printf(" CONDITION ");
        if (C == 1) goto _4467;
@@ -202,7 +202,7 @@ _4472: _9200();
        _9200();
        printf(" SHIELDS   %d\n", (int)S);
        _9200();
-       printf(" PHOTON TORPEDOES %.0lf\n", P);
+       printf(" PHOTON TORPEDOES %.0f\n", P);
        printf("-=--=--=--=--=--=--=--=-\n");
 _4530: return;
 }
@@ -642,7 +642,7 @@ _1560: if (E > 0) goto _1610;
        Z = E;
        _9400();
        printf(" UNITS OF ENERGY\n");
-       printf("SUGGEST YOU GET SOME FROM YOUR SHIELDS WHICH HAVE %.0lf\n", S);
+       printf("SUGGEST YOU GET SOME FROM YOUR SHIELDS WHICH HAVE %.0f\n", S);
        printf("UNITS LEFT\n");
        goto _1270;
 _1610: for(I = 1; I <= 8; I += 1) {
@@ -738,7 +738,7 @@ _2530: if (_P[1] <= 0) goto _3670;
        goto _1270;
 _2570: if (_D[7] >= 0) goto _2590;
        printf(" COMPUTER FAILURE HAMPERS ACCURACY\n");
-_2590: printf("PHASERS LOCKED ON TARGET.  ENERGY AVAILABLE = %.0lf\n", E);
+_2590: printf("PHASERS LOCKED ON TARGET.  ENERGY AVAILABLE = %.0f\n", E);
        printf("NUMBER OF UNITS TO FIRE ");
        Input(&X);
        if (X <= 0) goto _1270;
@@ -822,7 +822,7 @@ _3430: if (_3790()) goto _4000;
 _3460: if (_D[7] >= 0) goto _3490;
        printf("SHIELD CONTROL IS NON-OPERATIONAL\n");
        goto _1270;
-_3490: printf("ENERGY AVAILABLE = %.0lf\n", (E + S));
+_3490: printf("ENERGY AVAILABLE = %.0f\n", (E + S));
        printf("NUMBER OF UNITS TO SHIELDS ");
        Input(&X);
        if (X <= 0) goto _1270;
@@ -837,7 +837,7 @@ _3590: printf("\n");
        printf("DEVICE        STATE OF REPAIR\n");
        for(F = 1; F <= 8; F++) {
          _5610();
-         printf("  %.0lf\n", _D[(int)F]);
+         printf("  %.0f\n", _D[(int)F]);
        ;}
        printf("\n");
        goto _1270;
@@ -850,7 +850,7 @@ _3940: if (_P[1] <= 0) goto _4020;
        if (_3790()) goto _4000;
        goto _3940;
 _3970: printf("\n");
-       printf("IT IS STARDATE %.0lf\n", T);
+       printf("IT IS STARDATE %.0f\n", T);
        goto _4020;
 _4000: printf("\n");
        printf("THE ENTERPRISE HAS BEEN DESTROYED. THE FEDERATION WILL");
@@ -865,7 +865,7 @@ _4040: printf("\n");
        printf(" DESTROYED\n");
        printf("THE FEDERATION HAS BEEN SAVED !!!\n");
        printf("\n");
-       printf("YOUR EFFICIENCY RATING = %.0lf\n", ((_P[2] / (T - _T[1])) * 1000));
+       printf("YOUR EFFICIENCY RATING = %.0f\n", ((_P[2] / (T - _T[1])) * 1000));
        goto _230;
        /* computer... */
 _4630: if (_D[8] >= 0) goto _4660;
@@ -899,9 +899,9 @@ _4740: printf("COMPUTER RECORD OF GALAXY FOR QUADRANT");
 _4830: printf("\n");
        printf("   STATUS REPORT\n");
        printf("\n");
-       printf("NUMBER OF KLINGONS LEFT  = %.0lf\n", _P[3]);
-       printf("NUMBER OF STARDATES LEFT = %.0lf\n", (_T[1] + _T[2]) - T);
-       printf("NUMBER OF STARBASES LEFT = %.0lf\n", _B[2]);
+       printf("NUMBER OF KLINGONS LEFT  = %.0f\n", _P[3]);
+       printf("NUMBER OF STARDATES LEFT = %.0f\n", (_T[1] + _T[2]) - T);
+       printf("NUMBER OF STARBASES LEFT = %.0f\n", _B[2]);
        goto _3560;
 _4890: Q = 0; I = 1;
 _4900: if (I > 3) goto _5270;
@@ -930,9 +930,9 @@ _5010:   X = (int)(X - A);
          if (A == 0) goto _5150;
 _5070:   B = 1;
 _5080:   if (Abs(A) <= Abs(X)) goto _5110;
-         printf("DIRECTION = %.2lf\n", B+(((Abs(A)-Abs(X))+Abs(A))/Abs(A)));
+         printf("DIRECTION = %.2f\n", B+(((Abs(A)-Abs(X))+Abs(A))/Abs(A)));
          goto _5240;
-_5110:   printf("DIRECTION = %.2lf\n", B+(Abs(A)/Abs(X)));
+_5110:   printf("DIRECTION = %.2f\n", B+(Abs(A)/Abs(X)));
          goto _5240;
 _5130:   if (A > 0) goto _5170;
          if (X == 0) goto _5190;
@@ -942,10 +942,10 @@ _5170:   B = 3;
          goto _5200;
 _5190:   B = 7;
 _5200:   if (Abs(A) >= Abs(X)) goto _5230;
-         printf("DIRECTION = %.2lf\n", B+(((Abs(X)-Abs(A))+Abs(X))/Abs(X)));
+         printf("DIRECTION = %.2f\n", B+(((Abs(X)-Abs(A))+Abs(X))/Abs(X)));
          goto _5240;
-_5230:   printf("DIRECTION = %.2lf\n", B+(Abs(X)/Abs(A)));
-_5240:   printf("DISTANCE  = %.2lf\n", sqrt(X*X+A*A));
+_5230:   printf("DIRECTION = %.2f\n", B+(Abs(X)/Abs(A)));
+_5240:   printf("DISTANCE  = %.2f\n", sqrt(X*X+A*A));
          if (_V[6] != 1) goto _5253;
          L = Abs(X);
          if (L > Abs(A)) goto _5246;
