@@ -16,4 +16,4 @@ serve: build
 	python3 -m http.server 1971 -d ./dist
 
 clean:
-	rm -f st.mjs st.wasm
+	rm -rf dist emscripten-pty.js st.mjs st.wasm
