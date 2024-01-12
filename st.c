@@ -22,6 +22,10 @@
 #include <stdlib.h>
 #include <math.h> /* don't forget -lm */
 
+/* This hack is used to fix the buffering issues in the web assembly version,
+ * while at the same time allowing the program to remain C89 compliant when
+ * built on older machines
+ */
 #ifdef __STDC_VERSION__
 #if __STDC_VERSION__ >= 199901L
 #define PRINT(...) printf(__VA_ARGS__); fflush(stdout);
