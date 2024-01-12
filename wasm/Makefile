@@ -3,7 +3,7 @@
 
 dist: build
 	mkdir -p dist
-	cp ../help.txt index.html emscripten-pty.js st.mjs st.wasm dist
+	cp ../help.txt index.html st.mjs st.wasm dist
 	rm -f emscripten-pty.js st.mjs st.wasm
 
 build: clean init ../st.c
