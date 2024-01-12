@@ -609,7 +609,6 @@ _1270: PRINT("COMMAND ");
        if (A == 5) goto _3460;
        if (A == 6) goto _3560;
        if (A == 7) goto _4630;
-       if (A == 9) exit(0); /* my addition */
        PRINT("\n");
        PRINT("   0 = SET COURSE\n");
        PRINT("   1 = SHORT RANGE SENSOR SCAN\n");
