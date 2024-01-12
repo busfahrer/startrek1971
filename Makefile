@@ -4,7 +4,10 @@ st: st.c
 clean:
 	rm -f st
 
-pedantic:
+c89:
+	gcc -o st st.c -lm -Wall -pedantic -std=c89
+
+c99:
 	gcc -o st st.c -lm -Wall -pedantic -std=c99
 
-verify: clean pedantic
+verify: c89 c99

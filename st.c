@@ -4,8 +4,15 @@
 #include <math.h> /* don't forget -lm */
 
 /* srand(0); */
-
+#ifdef __STDC_VERSION__
+#if __STDC_VERSION__ >= 199901L
 #define PRINT(...) printf(__VA_ARGS__); fflush(stdout);
+#else
+#define PRINT printf
+#endif
+#else
+#define PRINT printf
+#endif
 
 #define ARRAYLEN(arr) (sizeof(arr) / sizeof(arr[0]))
 
