@@ -445,7 +445,7 @@ int main() {
       /* ***        TOTAL INTERACTION GAME - ORIG. 20 OCT 1972 */
       /* *** */
       /* ************************************************************** */
-      for(I = 1; I <= 20; I += 1) {
+      for(I = 1; I <= 18; I += 1) {
         PRINT("\n");
       ;}
       PRINT("                          STAR TREK \n");
