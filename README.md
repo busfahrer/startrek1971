@@ -1,6 +1,6 @@
 # (non-Super) Star Trek game (1971)
 * **Click [here](https://busfahrer.github.io/st71/) to play the Web Assembly version**
-* This is a ANSI C port of the *original* Star Trek game written by Mike Mayfield in 1971. You can find a lot of version of the later "*Super* Star Trek" game, but I had a hard time finding a playable copy of the original, non-super game.
+* This is a ANSI C port of the *original* Star Trek game written by Mike Mayfield in 1971. You can find a lot of versions of the later "*Super* Star Trek" game, but I had a hard time finding a playable copy of the original, non-super game.
 * This port is based on the 2008 C# port by Michael Birken: https://meatfighter.com/startrek1971/
 * This repository also contains tooling that compiles the C game into a Web Assembly application. It's located in the `wasm` subdirectory
 * This is compliant to ANSI C89, so it should compile on just about anything
