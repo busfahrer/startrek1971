@@ -7,7 +7,7 @@ dist: build
 	rm -f emscripten-pty.js st.mjs st.wasm
 
 build: clean init ../st.c
-	emcc -s ASYNCIFY --js-library=emscripten-pty.js -o st.mjs ../st.c
+	emcc -s ASYNCIFY --js-library=emscripten-pty.js -o st.mjs ../st.c -DWASM
 
 init:
 	curl -LO https://github.com/mame/xterm-pty/raw/main/emscripten-pty.js

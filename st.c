@@ -275,6 +275,28 @@ void _5820() {
        PRINT(">!< = STARBASE\n");
        PRINT(" *  = STAR\n");
        PRINT("\n");
+#ifdef WASM
+       PRINT("COMMAND 0 = WARP ENGINE CONTROL\n");
+       PRINT("  'COURSE IS IN A CIRCULAR NUMERICAL\n");
+       PRINT("  VECTOR ARRANGEMENT AS SHOWN.      \n");
+       PRINT("  INTERGER AND REAL VALUES MAY BE   \n");
+       PRINT("  USED.  THEREFORE COURSE 1.5 IS    \n");
+       PRINT("  HALF WAY BETWEEN 1 AND 2.         \n");
+       PRINT("\n");
+       PRINT("          4    3    2\n");
+       PRINT("           `.  :  .'\n");
+       PRINT("             `.:.'\n");
+       PRINT("          5---<*>---1\n");
+       PRINT("             .':`.\n");
+       PRINT("           .'  :  `.\n");
+       PRINT("          6    7    8\n");
+       PRINT("\n");
+       PRINT("            COURSE\n");
+       PRINT("\n");
+       PRINT("  A VECTOR OF 9 IS UNDEFINED, BUT\n");
+       PRINT("  VALUES MAY APPROACH 9.\n");
+       PRINT("\n");
+#else
        PRINT("COMMAND 0 = WARP ENGINE CONTROL\n");
        PRINT("  'COURSE IS IN A CIRCULAR NUMERICAL         4    3    2\n");
        PRINT("  VECTOR ARRANGEMENT AS SHOWN.                `.  :  .'\n");
@@ -285,6 +307,7 @@ void _5820() {
        PRINT("  A VECTOR OF 9 IS UNDEFINED, BUT            6    7    8\n");
        PRINT("  VALUES MAY APPROACH 9.\n");
        PRINT("                                               COURSE\n");
+#endif
        PRINT("  ONE 'WARP FACTOR' IS THE SIZE OF\n");
        PRINT("  ONE QUADRANT.  THEREFORE TO GET FROM\n");
        PRINT("  QUADRANT 5,6 TO 5,5 YOU WOULD USE COURSE 3, WARP\n");
