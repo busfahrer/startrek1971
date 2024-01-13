@@ -497,9 +497,18 @@ int main() {
       PRINT("\n");
       PRINT("\n");
       PRINT("\n");
+#ifdef WASM
+      PRINT("ENTER 1 FOR INSTRUCTIONS OR 2 TO PLAY ");
+      Input(&A);
+      if (A != 1) {
+          A = 3;
+          goto _210;
+      }
+#else
       PRINT("ENTER 1 OR 2 FOR INSTRUCTIONS (ENTER 2 TO PAGE) ");
       Input(&A);
       if (A != 1 && A != 2) goto _210;
+#endif
       _5820();
       /* randomize query to mix it up */
 _210: PRINT("\n");
