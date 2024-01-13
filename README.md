@@ -29,7 +29,7 @@
 - I believe that Michael made some very minor changes in his port, like adding pagination for the instructions
 - My port has some further minor changes, however these only affect the WASM version since they are targeted at improving the mobile experience. If you compile the C version and run it in a terminal, it should play fairly identical to Michael's port
 - These are the changes for the WASM version:
-  - The leading page feed is 18 lines instead of 20
+  - The leading page feed is 12 lines instead of 20
   - The game title is set further to the left
   - The terminal is set very narrow to facilitate mobile play
   - To that end, the formatting of the instructions was modified to fit a 49 column terminal
