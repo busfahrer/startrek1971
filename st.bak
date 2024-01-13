@@ -24,7 +24,7 @@
 
 /* This hack is used to fix the buffering issues in the web assembly version,
  * while at the same time allowing the program to remain C89 compliant when
- * built on older machines (which won't require the additional flushing).
+ * built on older machines
  */
 #ifdef __STDC_VERSION__
 #if __STDC_VERSION__ >= 199901L
@@ -275,87 +275,6 @@ void _5820() {
        PRINT(">!< = STARBASE\n");
        PRINT(" *  = STAR\n");
        PRINT("\n");
-#ifdef WASM
-       PRINT("COMMAND 0 = WARP ENGINE CONTROL\n");
-       PRINT("  'COURSE IS IN A CIRCULAR NUMERICAL\n");
-       PRINT("  VECTOR ARRANGEMENT AS SHOWN.      \n");
-       PRINT("  INTERGER AND REAL VALUES MAY BE   \n");
-       PRINT("  USED.  THEREFORE COURSE 1.5 IS    \n");
-       PRINT("  HALF WAY BETWEEN 1 AND 2.         \n");
-       PRINT("\n");
-       PRINT("          4    3    2\n");
-       PRINT("           `.  :  .'\n");
-       PRINT("             `.:.'\n");
-       PRINT("          5---<*>---1\n");
-       PRINT("             .':`.\n");
-       PRINT("           .'  :  `.\n");
-       PRINT("          6    7    8\n");
-       PRINT("\n");
-       PRINT("            COURSE\n");
-       PRINT("\n");
-       PRINT("  A VECTOR OF 9 IS UNDEFINED, BUT\n");
-       PRINT("  VALUES MAY APPROACH 9.\n");
-       PRINT("\n");
-       PRINT("  ONE 'WARP FACTOR' IS THE SIZE OF\n");
-       PRINT("  ONE QUADRANT.  THEREFORE TO GET FROM\n");
-       PRINT("  QUADRANT 5,6 TO 5,5 YOU WOULD USE COURSE 3,\n");
-       PRINT("  WARP FACTOR 1. COORDINATES ARE SPECIFIED USING\n");
-       PRINT("  X,Y NOTATION WITH X 1-8 FROM LEFT-RIGHT AND\n");
-       PRINT("  Y 1-8 FROM TOP-BOTTOM.\n");
-       PRINT("\n");
-       PRINT("COMMAND 1 = SHORT RANGE SENSOR SCAN\n");
-       PRINT("  PRINTS THE QUADRANT YOU ARE CURRENTLY IN,\n");
-       PRINT("  INCLUDING STARS, KLINGONS, STARBASES, AND THE\n");
-       PRINT("  ENTERPRISE; ALONG WITH OTHER PERTINATE\n");
-       PRINT("  INFORMATION.\n");
-       PRINT("\n");
-       PRINT("COMMAND 2 = LONG RANGE SENSOR SCAN\n");
-       PRINT("  SHOWS CONDITIONS IN SPACE FOR ONE QUADRANT ON\n");
-       PRINT("  EACH SIDE OF THE ENTERPRISE IN THE MIDDLE OF\n");
-       PRINT("  THE SCAN.  THE SCAN IS CODED IN THE FORM XXX,\n");
-       PRINT("  WHERE THE UNITS DIGIT IS THE NUMBER OF STARS,\n");
-       PRINT("  THE TENS DIGIT IS THE NUMBER OF STAR-BASES,\n");
-       PRINT("  THE HUNDREDS DIGIT IS THE NUMBER OF KLINGONS.\n");
-       PRINT("\n");
-       PRINT("COMMAND 3 = PHASER CONTROL\n");
-       PRINT("  ALLOWS YOU TO DESTROY THE KLINGONS BY HITTING\n");
-       PRINT("  HIM WITH SUITABLY LARGE NUMBERS OF ENERGY\n");
-       PRINT("  UNITS TO DEPLETE HIS SHIELD POWER.  KEEP IN\n");
-       PRINT("  MIND THAT WHEN YOU SHOOT AT HIM, HE GONNA DO\n");
-       PRINT("  IT TO YOU TOO.\n");
-       PRINT("\n");
-       PRINT("COMMAND 4 = PHOTON TORPEDO CONTROL\n");
-       PRINT("  COURSE IS THE SAME AS USED IN WARP ENGINE\n");
-       PRINT("  CONTROL IF YOU HIT THE KLINGON, HE IS\n");
-       PRINT("  DESTROYED AND CANNOT FIRE BACK AT YOU.  IF\n");
-       PRINT("  YOU MISS, HE WILL SHOOT HIS PHASERS AT YOU.\n");
-       PRINT("   NOTE: THE LIBRARY COMPUTER (COMMAND 7) HAS\n");
-       PRINT("   AN OPTION  TO COMPUTE TORPEDO TRAJECTORY\n");
-       PRINT("   FOR YOU (OPTION 2).\n");
-       PRINT("\n");
-       PRINT("COMMAND 5 = SHIELD CONTROL\n");
-       PRINT("  DEFINES NUMBER OF ENERGY UNITS TO ASSIGN TO\n");
-       PRINT("  SHIELDS ENERGY IS TAKEN FROM TOTAL SHIP'S\n");
-       PRINT("  ENERGY.\n");
-       PRINT("\n");
-       PRINT("COMMAND 6 = DAMAGE CONTROL REPORT\n");
-       PRINT("  GIVES STATE OF REPAIRS OF ALL DEVICES.\n");
-       PRINT("  A STATE OF REPAIR LESS THAN ZERO SHOWS THAT\n");
-       PRINT("  THAT DEVICE IS TEMPORARALY DAMAGED.\n");
-       PRINT("\n");
-       PRINT( "COMMAND 7 = LIBRARY COMPUTER\n");
-       PRINT( "  THE LIBRARY COMPUTER CONTAINS THREE OPTIONS:\n");
-       PRINT( "    OPTION 0 = CUMULATIVE GALACTIC RECORD\n");
-       PRINT( "     SHOWS COMPUTER MEMORY OF THE RESULTS OF\n");
-       PRINT( "     ALL PREVIOUS LONG RANGE SENSOR SCANS\n");
-       PRINT( "    OPTION 1 = STATUS REPORT\n");
-       PRINT( "     SHOWS NUMBER OF KLINGONS, STARDATES AND\n");
-       PRINT( "     STARBASES LEFT.\n");
-       PRINT( "    OPTION 2 = PHOTON TORPEDO DATA\n");
-       PRINT( "     GIVES TRAJECTORY AND DISTANCE BETWEEN\n");
-       PRINT( "     THE ENTERPRISE AND ALL KLINGONS IN YOUR\n");
-       PRINT( "     QUADRANT\n");
-#else
        PRINT("COMMAND 0 = WARP ENGINE CONTROL\n");
        PRINT("  'COURSE IS IN A CIRCULAR NUMERICAL         4    3    2\n");
        PRINT("  VECTOR ARRANGEMENT AS SHOWN.                `.  :  .'\n");
@@ -443,7 +362,6 @@ _6299: PRINT("\n");
          PRINT("\n");
        ;}
 _6408: PRINT("\n");
-#endif
        return;
 }
 
@@ -549,22 +467,7 @@ int main() {
       /* ***        TOTAL INTERACTION GAME - ORIG. 20 OCT 1972 */
       /* *** */
       /* ************************************************************** */
-#ifdef WASM
       for(I = 1; I <= 18; I += 1) {
-        PRINT("\n");
-      ;}
-      PRINT("              STAR TREK \n");
-      PRINT("\n");
-      PRINT("\n");
-      PRINT("\n");
-      PRINT("ENTER 1 FOR INSTRUCTIONS OR 2 TO PLAY ");
-      Input(&A);
-      if (A != 1) {
-          A = 3;
-          goto _210;
-      }
-#else
-      for(I = 1; I <= 20; I += 1) {
         PRINT("\n");
       ;}
       PRINT("                          STAR TREK \n");
@@ -574,7 +477,6 @@ int main() {
       PRINT("ENTER 1 OR 2 FOR INSTRUCTIONS (ENTER 2 TO PAGE) ");
       Input(&A);
       if (A != 1 && A != 2) goto _210;
-#endif
       _5820();
       /* randomize query to mix it up */
 _210: PRINT("\n");
