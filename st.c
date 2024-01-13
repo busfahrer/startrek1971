@@ -24,7 +24,7 @@
 
 /* This hack is used to fix the buffering issues in the web assembly version,
  * while at the same time allowing the program to remain C89 compliant when
- * built on older machines
+ * built on older machines (which won't require the additional flushing).
  */
 #ifdef __STDC_VERSION__
 #if __STDC_VERSION__ >= 199901L
