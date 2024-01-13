@@ -552,7 +552,7 @@ int main() {
       for(I = 1; I <= 18; I += 1) {
         PRINT("\n");
       ;}
-      PRINT("                          STAR TREK \n");
+      PRINT("              STAR TREK \n");
       PRINT("\n");
       PRINT("\n");
       PRINT("\n");
