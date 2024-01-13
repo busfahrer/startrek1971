@@ -15,10 +15,17 @@
       import 'https://cdn.jsdelivr.net/npm/xterm-pty/index.js';
       import initEmscripten from './st.mjs';
 
-      const termOpts =
-        window.innerWidth < 750
-        ? { rows: 24, cols: 49, fontSize: 12 }
-        : { rows: 24, cols: 70 };
+      const deviceMap = [
+        { vw:   0, rows: 24, cols: 49, fontSize: 11.5 },
+        { vw: 373, rows: 24, cols: 49, fontSize: 12 },
+        { vw: 390, rows: 24, cols: 49, fontSize: 12.5 },
+        { vw: 412, rows: 24, cols: 49, fontSize: 13 },
+        { vw: 428, rows: 24, cols: 49, fontSize: 13.5 },
+        { vw: 750, rows: 24, cols: 70 },
+      ];
+
+      const termOpts = deviceMap.findLast(opts => opts.vw <= window.innerWidth);
+      delete termOpts.vw;
 
       var xterm = new Terminal(termOpts);
       xterm.open(document.getElementById('terminal'));
