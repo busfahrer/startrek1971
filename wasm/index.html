@@ -1,34 +1,25 @@
 <!DOCTYPE html>
+<!--<html style="width: 35rem; margin: 0px;">-->
 <html>
   <head>
+ <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Trek (1971) game</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css" />
   </head>
+  <!--<body style="width: 35rem; margin: 0px;">-->
   <body>
     <p>This is an ANSI C (plus Web Assembly) port of the original <a href="https://en.wikipedia.org/wiki/Star_Trek_(1971_video_game)">Star Trek game</a> written in 1971 by Mike Mayfield, based on the 2008 C# port by <a href="https://meatfighter.com/startrek1971/">Michael Birken</a>.  For more info, see the <a href="https://github.com/busfahrer/startrek1971/" target="_blank">GitHub repo</a></p>
     <p>NOTE: The "paging" option for the instructions (2) does not work, but you can use the non-paging option (1) and then scroll up with Shift+PageUp or the mouse wheel. Or just click <a href="./help.txt" target="_blank">here</a> to view the instructions.</p>
     <div id="terminal"></div>
-    <pre>
-      4    3    2             0 = SET COURSE
-       `.  :  .'              1 = SHORT RANGE SENSOR SCAN
-         `.:.'                2 = LONG RANGE SENSOR SCAN
-      5---<*>---1             3 = FIRE PHASERS
-         .':`.                4 = FIRE PHOTON TORPEDOES
-       .'  :  `.              5 = SHIELD CONTROL
-      6    7    8             6 = DAMAGE CONTROL REPORT
-                              7 = CALL ON LIBRARY COMPUTER
-        COURSE                    FUNCTIONS AVAILABLE FROM COMPUTER
-                                     0 = CUMULATIVE GALATIC RECORD
-                                     1 = STATUS REPORT
-                                     2 = PHOTON TORPEDO DATA
-    </pre>
+    <!--<div style="width: 35rem" id="terminal"></div>-->
     <script type="module">
       import 'https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js';
       import 'https://cdn.jsdelivr.net/npm/xterm-pty/index.js';
       import initEmscripten from './st.mjs';
 
-      var xterm = new Terminal();
+      var xterm = new Terminal({ rows: 24, cols: 50, fontSize: 11.5 });
       xterm.open(document.getElementById('terminal'));
       const { master, slave } = openpty();
       xterm.loadAddon(master);
