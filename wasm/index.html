@@ -33,12 +33,12 @@
       import initEmscripten from './st.mjs';
 
       const deviceMap = [
-        { vw:   0, rows: 24, cols: 49, fontSize: 11.5 },
-        { vw: 373, rows: 24, cols: 49, fontSize: 12 },
+        { vw:   0, rows: 20, cols: 49, fontSize: 11.5 },
+        { vw: 373, rows: 21, cols: 49, fontSize: 12 },
         { vw: 390, rows: 24, cols: 49, fontSize: 12.5 },
         { vw: 412, rows: 24, cols: 49, fontSize: 13 },
         { vw: 428, rows: 24, cols: 49, fontSize: 13.5 },
-        { vw: 750, rows: 24, cols: 70 },
+        { vw: 750 },
       ];
 
       const termOpts = deviceMap.findLast(opts => opts.vw <= window.innerWidth);
