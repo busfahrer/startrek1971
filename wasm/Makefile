@@ -5,7 +5,7 @@
 
 dist: st.mjs
 	mkdir -p dist
-	cp ../help.txt index.html st.mjs st.wasm dist
+	cp -vr img pwa-manifest.json ../help.txt index.html st.mjs st.wasm dist
 
 st.mjs: emscripten-pty.js ../st.c
 	emcc -s ASYNCIFY --js-library=emscripten-pty.js -o st.mjs ../st.c -DWASM
