@@ -27,8 +27,8 @@
             "type": "image/jpeg"
         }
     ],
-    "background_color": "#af0a1a",
-    "theme_color": "#af0a1a",
+    "background_color": "#202b38",
+    "theme_color": "#202b38",
     "display": "fullscreen",
     "orientation": "any",
     "start_url": ".",
