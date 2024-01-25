@@ -30,10 +30,10 @@
     "background_color": "#202b38",
     "theme_color": "#202b38",
     "display": "fullscreen",
-    "orientation": "any",
+    "orientation": "portrait",
     "start_url": ".",
     "url": "index.html",
     "scope": ".",
-    "lang": "fa-IR",
+    "lang": "en",
     "dir": "rtl"
 }
